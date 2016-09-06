@@ -68,7 +68,7 @@ print 'speling =>', correct('speling')
 단어 w가 주어졌을때 각 교정 결과 후보 c에 조건부 확률 값을 배정하고 그 중 확률을 최대화하는 후보를 선택하는것으로 해보자.
 이런 c를 다음과 같이 쓸 수 있다.
 
-(1) ![](https://latex.codecogs.com/gif.latex?%5Cmax_%7Bc%7D%20P%5Cleft%28c%7Cw%5Cright%29)
+(1) ![](https://latex.codecogs.com/gif.latex?%5Carg%5Cmax_%7Bc%7D%20P%5Cleft%28c%7Cw%5Cright%29)
 
 베이즈 정리에 의하면 이것을 아래처럼 고쳐 쓸 수 있다
 
