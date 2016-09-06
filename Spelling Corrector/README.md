@@ -156,7 +156,55 @@ def edits1(word):
 
     return set(deletes + transposes + replaces + inserts)
 ```
-`
+
+이 함수는 각 연산의 결과를 모두 합쳐서 반환하기 때문에 꽤 클 수 있다.
+단어의 길이가 n이라고 하면, n개의 삭제, n-1개의 뒤집기, 26n개의 변경, 26(n+1)개의 삽입 연산이 가능하므로 전부 합하면 54n+25개의 후보가 있을 수 있다.
+예를 들어, `len(edits('something'))`으로 원소의 개수를 세보면 494가 나온다.
+
+오타가 편집거리 1만에 교정될 수도 있지만, 2까지 갈 가능성이 있다.
+`edits1`을 한번 더 호출하는 방식으로 2까지 검사할 수 있다.
+
+``` python
+def edits2(word):
+    return set(e2 for e1 in edits1(word)
+                  for e2 in edits1(e1))
+```
+
+이렇게 작성하면 편하지만, 계산량이 너무 많다.
+`len(edits('something'))`은 무려 114,324가 된다.
+모든 후보를 생성하는 대신, 실제로 우리가 알고 있는 단어들만 반환하도록 최적화를 진행해보자.
+아래 코드는 최적화를 적용한 코드이다.
+
+```python
+def known_edits2(word):
+    return set(e2 for e1 in edits1(word)
+               for e2 in edits1(e1) if e2 in NWORDS)
+```
+
+이렇게 최적화를 하면 `known_edits2('something'`은 `edits2`의 11만개 대신 4개의 단어만을 반환한다.
+이 최적화로 수행시가느이 10% 정도를 절약할 수 있었다.
+
+남은 부분은 **오류 모델 P(w|c)**를 만드는 부분이다.
+입력 단어에서 편집거리가 1인 모든 단어는 편집 거리가 2인 단어보다 가능성이 훨씬 높고, 편집거리가 0이라고 우리가 알고 있는 단어마다 가능성이 낮다고 가정한다.
+여기서 우리가 알고 있는 단어란 언어 모델, 즉 훈련용 데이터에 포함된 단어를 나타낸다.
+이 전략을 아래와 같이 구현할 수 있다.
+
+``` python
+def known(words):
+    return set(w for w in words if w in NWORDS)
+
+
+def correct(word):
+    candidates = known([word]) \
+                 or known(edits1(word)) \
+                 or known_edits2(word) \
+                 or [word]
+    return max(candidates, key=NWORDS.get)
+```
+
+`correct` 함수는 주어진 입력 `word`에서 편집 거리가 가장 가까운 단어들의 목록은 `candidates`에 저장한다.
+그 후에는 `NWORDS` 모델에 의해 알려진 대로 P(c)가 가장 큰 단어를 반환한다.
+
 ## 출처
 Peter Norvig의 [How to Write a Spelling Corrector](http://norvig.com/spell-correct.html)을 공부하면서 정리했습니다.<br/>
 [여기](http://theyearlyprophet.com/spell-correct.html)에서 개선된 소스코드와 설명을 참고했습니다.
