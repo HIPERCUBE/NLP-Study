@@ -1,7 +1,8 @@
 # Spelling Corrector
 
+
 ## Source Code
-View source code : [corrector]("corrector.py")
+View source code : [corrector.py](corrector.py)
 ``` python
 import re, collections
 
