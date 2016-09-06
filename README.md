@@ -3,3 +3,5 @@
 
 ## 목록
 - [철자 검사기](Spelling%20Corrector/)
+- [Stanford CoreNLP 사용법](CoreNLP%20Usage/)
+- [Stanford CoreNLP 분석](CoreNLP%20Analysis/)
