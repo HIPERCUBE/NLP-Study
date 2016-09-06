@@ -127,7 +127,35 @@ NWORD에 안들어 있는 단어는 어떻게 처리할까 이다.
 이 클래스는 `dict`와 똑같이 작동하지만 처음 보는 키의 기본키를 직접 지정할 수 있다는 차이점이 있다.
 `collections.defaultdict(lambda: 1)`여기서 `lambda: 1`이라는 코드로 1로 지정했다.
 
+일반적으로 두 단어가 얼마나 비슷한가를 측정할때 **편집거리(edit distance)**를 사용한다.
+한 단어를 다른 단어로 바꾸기 위해 필요한 연산의 최소 수를 의미한다.
+연산의 종류는 다음과 같다.
+
+|--|--|
+| delete | 한 글자 삭제 |
+| transpose | 인접한 두 글자를 바꾸기 |
+| replace | 한 글자를 다른 알파벳으로 변경 |
+| insert | 새 글자를 삽입 |
+
+구현 소스코드는 아래와 같다.
+
+``` python
+def edits1(word):
+    splits = [(word[:i], word[i:])
+              for i in range(len(word) + 1)]
+
+    deletes = [a + b[1:]
+               for a, b in splits if b]
+    transposes = [a + b[1] + b[0] + b[2:]
+                  for a, b in splits if len(b) > 1]
+    replaces = [a + c + b[1:]
+                for a, b in splits for c in alphabet if b]
+    inserts = [a + c + b
+               for a, b in splits for c in alphabet]
+
+    return set(deletes + transposes + replaces + inserts)
+```
 `
 ## 출처
-Peter Norvig의 [How to Write a Spelling Corrector](http://norvig.com/spell-correct.html)을 공부하면서 정리했습니다
-소스 코드는 [여기](http://theyearlyprophet.com/spell-correct.html)에서 참고했습니다.
+Peter Norvig의 [How to Write a Spelling Corrector](http://norvig.com/spell-correct.html)을 공부하면서 정리했습니다.<br/>
+[여기](http://theyearlyprophet.com/spell-correct.html)에서 개선된 소스코드와 설명을 참고했습니다.
