@@ -50,4 +50,5 @@ def correct(word):
     return max(candidates, key=NWORDS.get)
 
 
-print correct('speling')
+# Test corrector
+print 'speling =>', correct('speling')
