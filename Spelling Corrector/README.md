@@ -181,7 +181,7 @@ def known_edits2(word):
                for e2 in edits1(e1) if e2 in NWORDS)
 ```
 
-이렇게 최적화를 하면 `known_edits2('something'`은 `edits2`의 11만개 대신 4개의 단어만을 반환한다.
+이렇게 최적화를 하면 `known_edits2('something')`은 `edits2`의 11만개 대신 4개의 단어만을 반환한다.
 이 최적화로 수행시가느이 10% 정도를 절약할 수 있었다.
 
 남은 부분은 **오류 모델 P(w|c)**를 만드는 부분이다.
@@ -204,6 +204,7 @@ def correct(word):
 
 `correct` 함수는 주어진 입력 `word`에서 편집 거리가 가장 가까운 단어들의 목록은 `candidates`에 저장한다.
 그 후에는 `NWORDS` 모델에 의해 알려진 대로 P(c)가 가장 큰 단어를 반환한다.
+
 
 ## 출처
 Peter Norvig의 [How to Write a Spelling Corrector](http://norvig.com/spell-correct.html)을 공부하면서 정리했습니다.<br/>
