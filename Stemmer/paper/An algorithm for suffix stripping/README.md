@@ -122,9 +122,9 @@ PROBE와 PROBATE를 예시로 들어보면, 이 둘은 현대 영어에서 전�
 'm=0'인 경우는 null word이다.
 아래에 몇몇 예시가 있다.
 
-> m=0   TR(C), EE(V), TREE(CV), Y(V), BY(CV)
-> m=1   TROUBLE(CVCV), OATS(VC), TREES(CVC), IVY(VCV)
-> m=2   TROUBLES(CVCVC), PRIVATE(CVCVCV), OATEN(VCVC), ORRERY(VCVCV)
+> m=0   TR(C), EE(V), TREE(CV), Y(V), BY(CV)</br>
+> m=1   TROUBLE(CVCV), OATS(VC), TREES(CVC), IVY(VCV)</br>
+> m=2   TROUBLES(CVCVC), PRIVATE(CVCVCV), OATEN(VCVC), ORRERY(VCVCV)</br>
 
 [C](VC){m}[V]를 이렇게 이해하면 된다.
 [C], [V]는 있을수도 있고, 없을 수도 있다.
