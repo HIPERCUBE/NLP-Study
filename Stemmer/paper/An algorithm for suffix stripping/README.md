@@ -134,3 +134,24 @@ PROBE와 PROBATE를 예시로 들어보면, 이 둘은 현대 영어에서 전�
 
 > (condition) S1 -> S2
 
+만약에 단어가 접미사 S1으로 끝나고, S1 앞에 있는 단어가 주어진 condition(조건)을 충족하면, S1은 S2로 교체된다.
+condition(조건)은 일반적으로 m의 관점에서 주어진다.
+예를 들면
+
+> (m > 1) EMENT ->
+
+여기서 S1은 'EMENT'이고, S2는 null이다.
+'REPLACEMENT'는 'REPLAC'으로 될 것이다.
+'REPLAC'은 m이 2이기 때문이다.
+(REPLAC = CVCVC)
+
+condition(조건) 부분은 아마 아래 내용들을 포함한다.
+
+\*S - S로 끝나는 stem(원형 단어) 과 마찬가지인 다른 단어들
+
+\*v\* - 모음을 포함한 stem
+ 
+\*d - 자음 2개로 끝나는 stem(e.g -TT, -SS)
+
+\*o - cvc로 끝나는 stem, 2번째 c가 W, X, Y가 아닌 단어(e.g -WIL, -HOP).
+
