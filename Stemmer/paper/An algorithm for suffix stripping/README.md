@@ -165,7 +165,6 @@ m이 1보다 크고, S나 T로 끝나는지 검사하는것이다.
 > (\*d and not (\*L or \*S or \*Z))
 
 L, S, Z가 아니라 이중 자음(consonant)로 끝나는지 검사하는 것이다.
-
 이런 정교한 조건은 드물게 필요하다.
 
 In a set of rules written beneath each other
