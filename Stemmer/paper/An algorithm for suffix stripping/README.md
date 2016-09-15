@@ -200,3 +200,17 @@ L, S, Z가 아니라 이중 자음(consonant)로 끝나는지 검사하는 것�
 > [(\*v\*) ING -> ] motoring -> motor<br/>
 > [(\*v\*) ING -> ] sing -> sing
 
+만약 **step 1b**의 2,3번재 규칙이 성공적이면, 아래 단계가 진행된다.
+
+> [AT -> ATE] conflat(ed) -> conflate<br/>
+> [BL -> BLE] troubl(ed) -> trouble<br/>
+> [IZ -> IZE] siz(ed) -> size<br/>
+> (\*d and not (\*L or \*S or \*Z))<br/>
+>    -> Single letter<br/>
+> hopp(ing) -> hop<br/>
+> tann(ed) -> tan<br/>
+> fall(ing) -> fall<br/>
+> hiss(ing) -> hiss<br/>
+> fizz(ed) -> fizz<br/>
+> [(m=1 and \*o) -> E] fail(ing) -> fail<br/>
+> [(m=1 and \*o) -> E] fil(ing) -> file
