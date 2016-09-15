@@ -178,3 +178,25 @@ L, S, Z가 아니라 이중 자음(consonant)로 끝나는지 검사하는 것�
 (조건들이 전부 null인 경우) `CARESSES`는 `CARESS`와 매핑된다.
 이유는 `SSES`가 S1과 가장 길게 매칭도기 때문이다.
 즉 `CARESS`는 `CARESS`(S1='SS')와 매칭되고, `CARES`는 `CARE`(S1=S)와 매칭된다.
+
+아래 규칙들들 어플리케이션에서 사용되는 예시를 보도록하자.
+알고리즘은 아래와 같다.
+"[]"안에 있는 거는 조건, 그 뒤에 나오는거는 예시이다.
+
+**Stemp 1a**
+
+> [SSES -> SS] caresses -> caress<br/>
+> [IES -> I] ponies -> poni<br/>
+> [IES -> I] ties -> ti<br/>
+> [SS -> SS] caress -> caress<br/>
+> [S -> ] cats  -> cat
+
+**stem 1b**
+
+> [(m>0) EED -> EE] feed -> feed<br/>
+> [(m>0) EED -> EE] agreed -> agree<br/>
+> [(\*v\*) ED -> ] plastered -> plaster<br/>
+> [(\*v\*) ED -> ] bled -> bled<br/>
+> [(\*v\*) ING -> ] motoring -> motor<br/>
+> [(\*v\*) ING -> ] sing -> sing
+
