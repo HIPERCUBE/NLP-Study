@@ -166,5 +166,15 @@ m이 1보다 크고, S나 T로 끝나는지 검사하는것이다.
 L, S, Z가 아니라 이중 자음(consonant)로 끝나는지 검사하는 것이다.
 이런 정교한 조건은 드물게 필요하다.
 
-In a set of rules written beneath each other
+아래 나온 규칙들 중에서, 오직 하나만 순종한다.
+그리고 이건 주어진 단어에서 S1과 가장 길게 매칭될것이다.
+예를 들면 아래와 같다.
 
+> SSES -> SS<br/>
+> IES -> I<br/>
+> SS -> SS<br/>
+> S ->
+
+(조건들이 전부 null인 경우) `CARESSES`는 `CARESS`와 매핑된다.
+이유는 `SSES`가 S1과 가장 길게 매칭도기 때문이다.
+즉 `CARESS`는 `CARESS`(S1='SS')와 매칭되고, `CARES`는 `CARE`(S1=S)와 매칭된다.
