@@ -291,3 +291,37 @@ step 2의 문자열 S1은 끝에서 2번째 글자의 알파벳순 정렬된다.
 이제 접미사들을 삭제되었다.
 이제 남은것은 간단한거 밖에 없다.
 
+**Step 5a**
+
+> [(m>1) E     ->       ]          probate        ->  probat<br/>
+> [(m>1) E     ->       ]          rate           ->  rate<br/>
+> [(m=1 and not *o) E ->]          cease          ->  ceas
+
+**Step 5b**
+
+> [(m > 1 and *d and *L) -> single letter]<br/>
+>                                     controll       ->  control<br/>
+>                                     roll           ->  roll
+
+스템이 너무 짧은 경우 알고리즘은 접미사를 제거하지 않도록 주의한다.
+스템의 길이수를 m이라고 측정한다.
+이 접근법에는 언어적인 기초가 없다.
+이건 단순하게보인다.
+m이 접미사를 없앨지 말지 결정하는데 꽤 효과적인 도움이 된다.
+예를 들면 아래에 2가지 리스트가 있다.
+
+| List A | List B |
+| :-- | :-- |
+| RELATE   |  DERIVATE |
+| PROBATE  |  ACTIVATE |
+| CONFLATE |  DEMONSTRATE |
+| PIRATE   |  NECESSITATE |
+| PRELATE  |  RENOVATE |
+
+-ATE is removed from the list B words, but not from the list A words. This
+means that the pairs DERIVATE/DERIVE, ACTIVATE/ACTIVE, DEMONSTRATE/DEMONS-
+TRABLE, NECESSITATE/NECESSITOUS, will conflate together. The fact that no
+attempt is made to identify prefixes can make the results look rather
+inconsistent. Thus PRELATE does not lose the -ATE, but ARCHPRELATE becomes
+ARCHPREL. In practice this does not matter too much, because the presence of
+the prefix decreases the probability of an erroneous conflation.
