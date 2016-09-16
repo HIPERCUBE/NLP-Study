@@ -325,3 +325,32 @@ attempt is made to identify prefixes can make the results look rather
 inconsistent. Thus PRELATE does not lose the -ATE, but ARCHPRELATE becomes
 ARCHPREL. In practice this does not matter too much, because the presence of
 the prefix decreases the probability of an erroneous conflation.
+
+## REFERENCIES
+
+1.  LOVINS, J.B. Development of a Stemming Algorithm. \Mechanical
+    Translation and computation Linguistics\. \11\ (1) March 1968 pp 23-31.
+
+2.  ANDREWS, K. The Development of a Fast Conflation Algorithm for English.
+    \Dissertation for the Diploma in Computer Science\, Computer
+    Laboratory, University of Cambridge, 1971.
+
+3.  PETRARCA, A.E. and LAY W.M. Use of an automatically generated authority
+    list to eliminate scattering caused by some singular and plural main
+    index terms. \Proceedings of the American Society for Information
+    Science\, \6\ 1969 pp 277-282.
+
+4.  DATTOLA, Robert T. \FIRST: Flexible Information Retrieval System for
+    Text\. Webster N.Y: Xerox Corporation, 12 Dec 1975.
+
+5.  COLOMBO, D.S. and NIEHOFF R.T. \Final report on improved access to
+    scientific and technical information through automated vocabulary
+    switching.\ NSF Grant No. SIS75-12924 to the National Science
+    Foundation.
+
+6.  DAWSON, J.L. Suffix Removal and Word Conflation. \ALLC Bulletin\,
+    Michaelmas 1974 p.33-46.
+
+7.  CLEVERDON, C.W., MILLS J. and KEEN M. \Factors Determining the
+    Performance of Indexing Systems\ 2 vols. College of Aeronautics,
+    Cranfield 1966.
