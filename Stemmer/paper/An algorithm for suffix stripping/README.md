@@ -214,3 +214,80 @@ L, S, Z가 아니라 이중 자음(consonant)로 끝나는지 검사하는 것�
 > fizz(ed) -> fizz<br/>
 > [(m=1 and \*o) -> E] fail(ing) -> fail<br/>
 > [(m=1 and \*o) -> E] fil(ing) -> file
+
+단일 문자에 매핑하는 규칙은 이중 문자의 글자 쌍을 하라를 제거한다.
+`-AT`, `-BL`, `-IZ`뒤에 오는 `-E`, 즉 접미사 `-ATE`, `-BLE`, `-IZE`는 나중에 인식될 수 있다.
+이 `E`를 지우는 것은 4번째 단계이다.
+
+**Step 1c**
+
+> [(\*v\*) Y -> I] happy -> happi<br/>
+> [(\*v\*) Y -> I] sky -> sky 
+
+Step 1은 복수형과 과거 분사를 다룬다.
+이렇게 하면 후속단계가 훨씬 간단해진다.
+
+**Step 2**
+
+> [(m>0) ATIONAL -> ATE] relational -> relate<br/>
+> [(m>0) TIONAL -> TION] conditional -> condition<br/>
+> [(m>0) ATIONAL -> ATE] rational -> rational<br/>
+> [(m>0) ENCI -> ENCE] valenci -> valence<br/>
+> [(m>0) ANCI -> ANCE] hesitanci -> hesitanc<br/>
+> [(m>0) IZER    ->  IZE ]          digitizer      ->  digitiz<br/>
+> [(m>0) ABLI    ->  ABLE]          conformabli    ->  conformabl<br/>
+> [(m>0) ALLI    ->  AL  ]          radicalli      ->  radica<br/>
+> [(m>0) ENTLI   ->  ENT ]          differentli    ->  differen<br/>
+> [(m>0) ELI     ->  E   ]          vileli        - >  vil<br/>
+> [(m>0) OUSLI   ->  OUS ]          analogousli    ->  analogou<br/>
+> [(m>0) IZATION ->  IZE ]          vietnamization ->  vietnamiz<br/>
+> [(m>0) ATION   ->  ATE ]          predication    ->  predicat<br/>
+> [(m>0) ATOR    ->  ATE ]          operator       ->  operat<br/>
+> [(m>0) ALISM   ->  AL  ]          feudalism      ->  feuda<br/>
+> [(m>0) IVENESS ->  IVE ]          decisiveness   ->  decisiv<br/>
+> [(m>0) FULNESS ->  FUL ]          hopefulness    ->  hopefu<br/>
+> [(m>0) OUSNESS ->  OUS ]          callousness    ->  callou<br/>
+> [(m>0) ALITI   ->  AL  ]          formaliti      ->  forma<br/>
+> [(m>0) IVITI   ->  IVE ]          sensitiviti    ->  sensitiv<br/>
+> [(m>0) BILITI  ->  BLE ]          sensibiliti    ->  sensible
+
+문자열 S1에 대한 테스트는 프로그램이 테스트된 단어의 2번제 글자를 스위치함으로써 빨라질 수 있다.
+이런 방식은 때때로 문자열 S1의 가능한 값의 고장을 유발하기도 한다.
+step 2의 문자열 S1은 끝에서 2번째 글자의 알파벳순 정렬된다.
+비슷한 기술이 다른 단계에서도 적용될 수 있다.
+
+**Step 3**
+
+> [(m>0) ICATE ->  IC]              triplicate     ->  triplic<br/>
+> [(m>0) ATIVE ->    ]              formative      ->  form<br/>
+> [(m>0) ALIZE ->  AL]              formalize      ->  formal<br/>
+> [(m>0) ICITI ->  IC]              electriciti    ->  electric<br/>
+> [(m>0) ICAL  ->  IC]              electrical     ->  electric<br/>
+> [(m>0) FUL   ->    ]              hopeful        ->  hope<br/>
+> [(m>0) NESS  ->    ]              goodness       ->  good
+
+**Step 4**
+
+> [(m>1) AL    ->             ]     revival        ->  reviv<br/>
+> [(m>1) ANCE  ->             ]     allowance      ->  allow<br/>
+> [(m>1) ENCE  ->             ]     inference      ->  infer<br/>
+> [(m>1) ER    ->             ]     airliner       ->  airlin<br/>
+> [(m>1) IC    ->             ]     gyroscopic     ->  gyroscop<br/>
+> [(m>1) ABLE  ->             ]     adjustable     ->  adjust<br/>
+> [(m>1) IBLE  ->             ]     defensible     ->  defens<br/>
+> [(m>1) ANT   ->             ]     irritant       ->  irrit<br/>
+> [(m>1) EMENT ->             ]     replacement    ->  replac<br/>
+> [(m>1) MENT  ->             ]     adjustment     ->  adjust<br/>
+> [(m>1) ENT   ->             ]     dependent      ->  depend<br/>
+> [(m>1 and (*S or *T)) ION ->]     adoption       ->  adopt<br/>
+> [(m>1) OU    ->             ]     homologou      ->  homolog<br/>
+> [(m>1) ISM   ->             ]     communism      ->  commun<br/>
+> [(m>1) ATE   ->             ]     activate       ->  activ<br/>
+> [(m>1) ITI   ->             ]     angulariti     ->  angular<br/>
+> [(m>1) OUS   ->             ]     homologous     ->  homolog<br/>
+> [(m>1) IVE   ->             ]     effective      ->  effect<br/>
+> [(m>1) IZE   ->             ]     bowdlerize     ->  bowdler
+
+이제 접미사들을 삭제되었다.
+이제 남은것은 간단한거 밖에 없다.
+
