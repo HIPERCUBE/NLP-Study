@@ -322,11 +322,31 @@ List B의 단어들에서 `-ATE`는 삭제된다.
 하지만 List A의 단어들에서는 그렇지 않다.
 이것은 DERIVATE/DERIVE, ACTIVATE/ACTIVE, DEMONSTRATE/DEMONSTRABLE, NECESSITATE/NECESSITOUS 쌍은 서로 conflate결합한다는 것이다.
 
-The fact that no
-attempt is made to identify prefixes can make the results look rather
+The fact that no attempt is made to identify prefixes can make the results look rather
 inconsistent. Thus PRELATE does not lose the -ATE, but ARCHPRELATE becomes
 ARCHPREL. In practice this does not matter too much, because the presence of
 the prefix decreases the probability of an erroneous conflation.
+
+Complex suffixes are removed bit by bit in the different steps. Thus
+GENERALIZATIONS is stripped to GENERALIZATION (Step 1), then to GENERALIZE
+(Step 2), then to GENERAL (Step 3), and then to GENER (Step 4). OSCILLATORS
+is stripped to OSCILLATOR (Step 1), then to OSCILLATE (Step 2), then to
+OSCILL (Step 4), and then to OSCIL (Step 5). In a vocabulary of 10,000
+words, the reduction in size of the stem was distributed among the steps as
+follows:
+
+    Suffix stripping of a vocabulary of 10,000 words
+    ------------------------------------------------
+    Number of words reduced in step 1:   3597
+                  "                 2:    766
+                  "                 3:    327
+                  "                 4:   2424
+                  "                 5:   1373
+    Number of words not reduced:         3650
+
+The resulting vocabulary of stems contained 6370 distinct entries. Thus the
+suffix stripping process reduced the size of the vocabulary by about one
+third.
 
 ## REFERENCIES
 
