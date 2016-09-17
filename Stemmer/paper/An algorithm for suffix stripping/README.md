@@ -318,9 +318,11 @@ m이 접미사를 없앨지 말지 결정하는데 꽤 효과적인 도움이 �
 | PIRATE   |  NECESSITATE |
 | PRELATE  |  RENOVATE |
 
--ATE is removed from the list B words, but not from the list A words. This
-means that the pairs DERIVATE/DERIVE, ACTIVATE/ACTIVE, DEMONSTRATE/DEMONS-
-TRABLE, NECESSITATE/NECESSITOUS, will conflate together. The fact that no
+List B의 단어들에서 `-ATE`는 삭제된다.
+하지만 List A의 단어들에서는 그렇지 않다.
+이것은 DERIVATE/DERIVE, ACTIVATE/ACTIVE, DEMONSTRATE/DEMONSTRABLE, NECESSITATE/NECESSITOUS 쌍은 서로 conflate결합한다는 것이다.
+
+The fact that no
 attempt is made to identify prefixes can make the results look rather
 inconsistent. Thus PRELATE does not lose the -ATE, but ARCHPRELATE becomes
 ARCHPREL. In practice this does not matter too much, because the presence of
