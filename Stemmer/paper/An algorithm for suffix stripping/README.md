@@ -335,6 +335,7 @@ OSCILL (Step 4), and then to OSCIL (Step 5). In a vocabulary of 10,000
 words, the reduction in size of the stem was distributed among the steps as
 follows:
 
+
     Suffix stripping of a vocabulary of 10,000 words
     ------------------------------------------------
     Number of words reduced in step 1:   3597
@@ -343,6 +344,7 @@ follows:
                   "                 4:   2424
                   "                 5:   1373
     Number of words not reduced:         3650
+
 
 The resulting vocabulary of stems contained 6370 distinct entries. Thus the
 suffix stripping process reduced the size of the vocabulary by about one
